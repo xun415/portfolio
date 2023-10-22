@@ -38,7 +38,7 @@ const Header = () => {
 
     return <header className={`w-full fixed top-0 left-0 z-50 flex justify-center items-center border-y-2 bg-white h-16 uppercase font-bold`}>
         <div className={'container flex justify-between p-4'}>
-            <h1 className={'text-xl font-bold'}>
+            <h1 className={'text-xl font-bold cursor-pointer'}>
                 <a href={'/'}>
                     Taehun's PORTFOLIO
                 </a>
@@ -51,7 +51,7 @@ const Header = () => {
                             document.getElementById(link.title)!.scrollIntoView({
                                 behavior: 'smooth',
                             })
-                        }} className={'transition-colors hover:text-blue-400'}>{link.title}</a>
+                        }} className={'transition-colors hover:text-blue-400 cursor-pointer'}>{link.title}</a>
                     )
                 }
             </nav>
@@ -71,7 +71,7 @@ const Header = () => {
                             document.getElementById(link.title)!.scrollIntoView({
                                 behavior: 'smooth',
                             })
-                        }} className={'transition-colors hover:text-blue-400'}>{link.title}</a>
+                        }} className={'transition-colors hover:text-blue-400 cursor-pointer'}>{link.title}</a>
                     )
                 }
             </nav>
