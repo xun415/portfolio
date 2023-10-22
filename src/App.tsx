@@ -5,7 +5,7 @@ import ConfirmDialog from "@/components/ui/ConfirmDialog";
 function App() {
 
   return (
-        <BrowserRouter>
+        <BrowserRouter basename={'/portfolio'}>
             <Routes />
             <ConfirmDialog />
         </BrowserRouter>
