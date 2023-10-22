@@ -19,11 +19,17 @@ const ContactSection = () => {
     ]
 
     const onClickCopyMail = () => {
-        copyText(EMAIL, () => {
-            setDialogShow({
-                content: '복사 되었습니다.',
+        copyText(EMAIL,
+            () => {
+                setDialogShow({
+                    content: '복사 되었습니다.',
+                })
+            },
+            () => {
+                setDialogShow({
+                    content: '지원하지 않는 브라우저입니다. 위 주소를 복사해주세요',
+                })
             })
-        })
     }
 
     const onClickDownloadResume = () => {
@@ -52,9 +58,9 @@ const ContactSection = () => {
     return (
         <section id={'contact'} className={'h-screen contactSection flex flex-col gap-20 items-center justify-center'}>
             <h2 className={'text-5xl md:text-7xl uppercase'}>contact</h2>
-            <div className={'flex flex-col gap-4 text-xl md:text-3xl cursor-pointer'}>
+            <div className={'flex flex-col gap-4 text-xl md:text-3xl'}>
                 <TypeAnimation
-                    wrapper="span"
+                    wrapper="div"
                     speed={50}
                     sequence={TypeAnimationSequence}
                 />
