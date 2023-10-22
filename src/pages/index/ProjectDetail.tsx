@@ -46,7 +46,7 @@ const ProjectDetailModal = ({title, startAt, endAt, images, desc, skills, role, 
                 <h4 className={'font-bold text-lg'}>주요 작업 내용</h4>
                 <ul className={'flex flex-col gap-2'}>
                     {
-                        works.map(work => <li key={work}>{work}</li>)
+                        works.map(work => <li key={work} className={'list-disc list-inside'}>{work}</li>)
                     }
                 </ul>
                 {
