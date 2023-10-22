@@ -1,7 +1,7 @@
 import {useEffect} from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import {AiOutlineCopy} from "react-icons/ai";
+import {AiOutlineCopy, AiOutlineDownload} from "react-icons/ai";
 import {TypeAnimation} from "react-type-animation";
 import {copyText} from "../../lib/browser/clipboard";
 import {useDialogStore} from "../../store/dialog";
@@ -20,7 +20,7 @@ const ContactSection = () => {
 
     const onClickCopyMail = () => {
         copyText(EMAIL, () => {
-            setDialogShow?.({
+            setDialogShow({
                 content: '복사 되었습니다.',
             })
         })
@@ -52,19 +52,22 @@ const ContactSection = () => {
     return (
         <section id={'contact'} className={'h-screen contactSection flex flex-col gap-20 items-center justify-center'}>
             <h2 className={'text-5xl md:text-7xl uppercase'}>contact</h2>
-            <div className={'flex gap-1 text-xl md:text-3xl cursor-pointer'} onClick={onClickCopyMail}>
-                <span className={'pt-2 '}><AiOutlineCopy/></span>
+            <div className={'flex flex-col gap-4 text-xl md:text-3xl cursor-pointer'}>
                 <TypeAnimation
                     wrapper="span"
                     speed={50}
                     sequence={TypeAnimationSequence}
                 />
+                <Button onClick={onClickCopyMail} className={'mt-4'}>
+                    <span className={'text-xl mr-2'}><AiOutlineCopy/></span>Copy to ClipBoard
+                </Button>
             </div>
+
 
             <div className={'flex flex-col gap-4 w-[200px] md:w-[300px] border-t-2 p-4'}>
                 <h3 className={'text-center text-3xl md:text-5xl uppercase mb-4'}>resume</h3>
                 <Button onClick={onClickDownloadResume}>
-                    Download
+                    <span className={'text-xl mr-2'}><AiOutlineDownload/></span>Download
                 </Button>
             </div>
         </section>
