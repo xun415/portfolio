@@ -1,5 +1,5 @@
-import {Dialog, DialogClose, DialogTrigger} from "@radix-ui/react-dialog";
-import {DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle} from "@/components/ui/Dialog";
+import {Dialog} from "@radix-ui/react-dialog";
+import {DialogContent, DialogHeader, DialogTitle} from "@/components/ui/Dialog";
 import {useDialogStore} from "@/store/dialog";
 
 const ConfirmDialog = () => {

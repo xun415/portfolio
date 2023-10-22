@@ -1,6 +1,6 @@
-import {projects, Project} from "../../datas/project";
+import {Project} from "../../datas/project";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Navigation, Pagination } from 'swiper/modules';
+import { Autoplay, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import "swiper/css/pagination"
 

@@ -48,7 +48,7 @@ const Header = () => {
                     links.map(link =>
                         <a key={link.title} onClick={event => {
                             event.preventDefault()
-                            document.getElementById(link.title).scrollIntoView({
+                            document.getElementById(link.title)!.scrollIntoView({
                                 behavior: 'smooth',
                             })
                         }} className={'transition-colors hover:text-blue-400'}>{link.title}</a>
@@ -68,7 +68,7 @@ const Header = () => {
                     links.map(link =>
                         <a key={link.title} href={link.to} onClick={event => {
                             event.preventDefault()
-                            document.getElementById(link.title).scrollIntoView({
+                            document.getElementById(link.title)!.scrollIntoView({
                                 behavior: 'smooth',
                             })
                         }} className={'transition-colors hover:text-blue-400'}>{link.title}</a>

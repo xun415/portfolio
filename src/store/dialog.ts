@@ -15,12 +15,12 @@ const initialDialog: Dialog = {
     show: false,
     content: '',
 }
-export const useDialogStore = create<Partial<DialogProps>>(set => ({
+export const useDialogStore = create<DialogProps>(set => ({
     dialog: { ...initialDialog },
     setDialogShow: (_new: Partial<Dialog>) => {
         set((_old: DialogProps) => ({
             dialog: {
-                ..._old,
+                ..._old.dialog,
                 ..._new,
                 show: true
             }
@@ -29,7 +29,7 @@ export const useDialogStore = create<Partial<DialogProps>>(set => ({
     setDialogHide: () => {
         set((_old: DialogProps) => ({
             dialog: {
-                ..._old,
+                ..._old.dialog,
                 show: false
             }
         }))

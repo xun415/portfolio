@@ -1,5 +1,5 @@
 import gsap from 'gsap'
-import {ScrollTrigger, toArray} from 'gsap/all'
+import {ScrollTrigger} from 'gsap/all'
 
 import {TypeAnimation} from "react-type-animation";
 import VueLogo from '/src/assets/images/logo/vue.png'
@@ -8,7 +8,7 @@ import NextLogo from '/src/assets/images/logo/nextjs.png'
 import TsLogo from '/src/assets/images/logo/ts.png'
 import SASSLogo from '/src/assets/images/logo/sass.png'
 import JsLogo from '/src/assets/images/logo/js.png'
-import { useEffect, useRef} from "react";
+import { useEffect } from "react";
 
 const IntroSection = () => {
     const TypeAnimationSequence = [

@@ -7,10 +7,10 @@ import Overlay from "../../components/ui/Overlay";
 import LayoutModal from "../../components/ui/LayoutModal";
 import {projects} from "../../datas/project";
 import ProjectDetailModal from "./ProjectDetail";
-import {createPortal} from "react-dom";
 
 const ProjectSection = () => {
     const [selectedProjectId, setSelectedProjectId] = useState<string | null>(null)
+    const selectedProject = projects.find(project => project.title === selectedProjectId)
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger)
 
@@ -79,11 +79,11 @@ const ProjectSection = () => {
             </div>
             {/* overlay*/}
             {
-                selectedProjectId !== null &&
+                selectedProjectId !== null && selectedProject &&
                 <>
-                    {createPortal(<Overlay onClick={() => setSelectedProjectId(null)} />, document.getElementById('overlay-root'))}
+                    {<Overlay onClick={() => setSelectedProjectId(null)} />}
                     <LayoutModal layoutId={selectedProjectId} onClickClose={() => setSelectedProjectId(null)}>
-                        <ProjectDetailModal {...projects.find(project => project.title === selectedProjectId)}></ProjectDetailModal>
+                        <ProjectDetailModal {...selectedProject}></ProjectDetailModal>
                     </LayoutModal>
                 </>
             }
