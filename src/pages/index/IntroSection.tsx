@@ -35,20 +35,21 @@ const IntroSection = () => {
             .from('.tsIcon', { y: 100, x: 100, duration: .5, opacity: 0 })
             .from('.jsIcon', { y: 100, duration: .5, opacity: 0}, '<')
 
-        gsap.timeline({
-            scrollTrigger: {
-                trigger: '.intro-section',
-                start: '35% 20%',
-                end: '70% 30%',
-                scrub: 1,
-            }
-        })
-            .to('.vueIcon', {opacity: 0, y: -200,x:100, duration: .5, scale: 1.5, rotate: 360})
-            .to('.jsIcon', {opacity: 0, y: -200,x:100, duration: .5, scale: 1.5, rotate: 360}, '<')
-            .to('.reactIcon', {opacity: 0, x: -200, duration: 2, scale: 1.2, rotate: 360})
-            .to('.nextIcon', {opacity: 0, y: -200, duration: 2, scale: 1.5, rotate: 360}, '<')
-            .to('.tsIcon', {opacity: 0, y: 200,x:100, duration: 2, scale: 2, rotate: 360}, '<')
-            .to('.sassIcon', {opacity: 0, y: -200,x:100, duration: 2, scale: 1.5, rotate: 360}, '<')
+        // width 버그로 주석 처리
+        // gsap.timeline({
+        //     scrollTrigger: {
+        //         trigger: '.intro-section',
+        //         start: '35% 20%',
+        //         end: '70% 30%',
+        //         scrub: 1,
+        //     }
+        // })
+        //     .to('.vueIcon', {opacity: 0, y: -200,x:100, duration: .5, scale: 1.5, rotate: 360})
+        //     .to('.jsIcon', {opacity: 0, y: -200,x:100, duration: .5, scale: 1.5, rotate: 360}, '<')
+        //     .to('.reactIcon', {opacity: 0, x: -200, duration: 2, scale: 1.2, rotate: 360})
+        //     .to('.nextIcon', {opacity: 0, y: -200, duration: 2, scale: 1.5, rotate: 360}, '<')
+        //     .to('.tsIcon', {opacity: 0, y: 200,x:100, duration: 2, scale: 2, rotate: 360}, '<')
+        //     .to('.sassIcon', {opacity: 0, y: -200,x:100, duration: 2, scale: 1.5, rotate: 360}, '<')
 
     }, [])
 
